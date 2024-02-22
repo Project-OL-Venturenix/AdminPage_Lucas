@@ -7,7 +7,7 @@ import {
     Edit,
     SimpleForm,
     TextInput,
-    ReferenceInput, Create
+    ReferenceInput, Create, EditButton
 } from "react-admin";
 import { useMediaQuery, Theme } from "@mui/material";
 
@@ -52,6 +52,10 @@ export const UserList = () => {
                     <TextField source="username" />
                     <TextField source="company" />
                     <TextField source="title" />
+                    <TextField source="status"/>
+                    <TextField source="createddate" />
+                    <TextField source="title" />
+                    <EditButton/>
                 </Datagrid>
             )}
         </List>
@@ -69,7 +73,6 @@ export const UserEdit = () => (
             <TextInput  source="mobile" />
             <TextInput source="email" />
             <TextInput source="username" />
-            <TextInput source="company" />
         </SimpleForm>
     </Edit>
 );
@@ -77,15 +80,15 @@ export const UserEdit = () => (
 export const UserCreate = () => (
     <Create>
         <SimpleForm>
-            <ReferenceInput source="userId" reference="users"/>
-            <TextInput source="id" />
-            <TextInput source="firstname" />
-            <TextInput source="lastname" />
-            <TextInput  source="mobile" />
-            <TextInput source="email" />
-            <TextInput source="username" />
-            <TextInput source="company" />
-            <TextInput source="password" />
+            <TextInput source="firstname" required/>
+            <TextInput source="lastname" required/>
+            <TextInput source="status" required/>
+            <TextInput  source="mobile" required/>
+            <TextInput source="email" required/>
+            <TextInput source="username" required/>
+            <TextInput source="company" required/>
+            <TextInput source="password" required/>
+            <TextInput source="title" required/>
         </SimpleForm>
     </Create>
 );
