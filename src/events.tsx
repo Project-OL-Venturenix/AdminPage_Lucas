@@ -10,13 +10,12 @@ import {
     TextInput, Create
 } from "react-admin";
 
-export const QuestionList = () => (
+export const EventList = () => (
     <List>
         <Datagrid>
             <TextField source="id"/>
             <ReferenceField source="userId" reference="users" link="show"/>
-            <TextField source="questiontext"/>
-            <TextField source="answertext"/>
+            <TextField source="name"/>
             <TextField source="status"/>
             <TextField source="createddate"/>
             <TextField source="createdby"/>
@@ -27,13 +26,12 @@ export const QuestionList = () => (
     </List>
 );
 
-export const QuestionEdit = () => (
+export const EventEdit = () => (
     <Edit>
         <SimpleForm>
             <TextInput source="id" InputProps={{disabled: true}}/>
             <ReferenceInput source="userId" reference="users" link="show"/>
-            <TextInput source="questiontext"/>
-            <TextInput source="answertext"/>
+            <TextInput source="name"/>
             <TextInput source="status"/>
             <TextInput source="createddate"/>
             <TextInput source="createdby"/>
@@ -43,12 +41,11 @@ export const QuestionEdit = () => (
     </Edit>
 );
 
-export const QuestionCreate = () => (
+export const EventCreate = () => (
     <Create>
         <SimpleForm>
             <ReferenceInput source="userId" reference="users"/>
-            <TextInput source="questiontext"/>
-            <TextInput source="answertext"/>
+            <TextInput source="name"/>
             <TextInput source="status"/>
             <TextInput source="createddate"/>
             <TextInput source="createdby"/>

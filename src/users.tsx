@@ -1,4 +1,14 @@
-import {List, Datagrid, TextField, EmailField, SimpleList} from "react-admin";
+import {
+    List,
+    Datagrid,
+    TextField,
+    EmailField,
+    SimpleList,
+    Edit,
+    SimpleForm,
+    TextInput,
+    ReferenceInput, Create
+} from "react-admin";
 import { useMediaQuery, Theme } from "@mui/material";
 
 // export const UserList = () => (
@@ -47,3 +57,35 @@ export const UserList = () => {
         </List>
     );
 };
+
+export const UserEdit = () => (
+    <Edit>
+        <SimpleForm>
+            <TextInput source="id" InputProps={{disabled: true}}/>
+            <ReferenceInput source="userId" reference="users" link="show"/>
+            <TextInput source="id" />
+            <TextInput source="firstname" />
+            <TextInput source="lastname" />
+            <TextInput  source="mobile" />
+            <TextInput source="email" />
+            <TextInput source="username" />
+            <TextInput source="company" />
+        </SimpleForm>
+    </Edit>
+);
+
+export const UserCreate = () => (
+    <Create>
+        <SimpleForm>
+            <ReferenceInput source="userId" reference="users"/>
+            <TextInput source="id" />
+            <TextInput source="firstname" />
+            <TextInput source="lastname" />
+            <TextInput  source="mobile" />
+            <TextInput source="email" />
+            <TextInput source="username" />
+            <TextInput source="company" />
+            <TextInput source="password" />
+        </SimpleForm>
+    </Create>
+);
