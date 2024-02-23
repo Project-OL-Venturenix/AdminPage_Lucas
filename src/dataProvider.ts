@@ -4,6 +4,21 @@ import { stringify } from "query-string";
 const apiUrl = 'http://localhost:8081/api';
 const httpClient = fetchUtils.fetchJson;
 
+const getAccessToken = () => {
+    const user = localStorage.getItem('user');
+    return user ? JSON.parse(user).accessToken : null;
+};
+
+const addBearerToken = (headers) => {
+    const accessToken = getAccessToken();
+    if (accessToken) {
+        headers.set('Authorization', `Bearer ${accessToken}`);
+    }
+};
+
+const headers = new Headers();
+addBearerToken(headers);
+
 export const dataProvider: DataProvider = {
     getList: async (resource, params) => {
         const {page, perPage} = params.pagination;
@@ -14,16 +29,15 @@ export const dataProvider: DataProvider = {
             filter: JSON.stringify(params.filter),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
-
-        const {headers, json} = await httpClient(url);
+        const { headers: responseHeaders, json } = await httpClient(url, { headers });
         return ({
             data: json,
-            total: parseInt((headers.get('content-range') || "0").split('/').pop() || '0', 100),
+            total: parseInt((responseHeaders.get('content-range') || "0").split('/').pop() || '0', 100),
         });
     },
 
     getOne: (resource, params) =>
-        httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
+        httpClient(`${apiUrl}/${resource}/${params.id}`,{ headers }).then(({ json }) => ({
             data: json,
         })),
 
@@ -58,6 +72,7 @@ export const dataProvider: DataProvider = {
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'PUT',
             body: JSON.stringify(params.data),
+            headers
         }).then(({ json }) => ({ data: json })),
 
     updateMany: (resource, params) => {
@@ -74,6 +89,7 @@ export const dataProvider: DataProvider = {
         httpClient(`${apiUrl}/${resource}`, {
             method: 'POST',
             body: JSON.stringify(params.data),
+            headers
         }).then(({ json }) => ({
             data: { ...params.data, id: json.id } as any,
         })),
@@ -81,6 +97,7 @@ export const dataProvider: DataProvider = {
     delete: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'DELETE',
+            headers
         }).then(({ json }) => ({ data: json })),
 
     deleteMany: (resource, params) => {

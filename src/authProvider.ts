@@ -58,6 +58,7 @@ export const authProvider: AuthProvider = {
         // Handle user authentication or store user data as needed
         // For example, storing user data in localStorage
         localStorage.setItem("user", JSON.stringify(user));
+      //  console.log(JSON.stringify(user.accessToken));
 
         return Promise.resolve();
       } else {
