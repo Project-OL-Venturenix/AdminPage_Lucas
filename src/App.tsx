@@ -15,7 +15,6 @@ export const App = () => (
         <Resource name="eventquestions" list={EventQuestionList} edit={EventQuestionEdit} create={EventQuestionCreate}/>
         <Resource name="eventusers" list={EventUserList} edit={EventUserEdit} create={EventUserCreate}/>
         <Resource name="questions" list={QuestionList} edit={QuestionEdit} create={QuestionCreate}/>
-        <Resource name="users" list={UserList} show={ShowGuesser} recordRepresentation="name" edit={UserEdit}
-                  create={UserCreate}/>
+        <Resource name="users" list={UserList} show={ShowGuesser} edit={UserEdit} create={UserCreate}/>
     </Admin>
 );

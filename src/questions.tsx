@@ -32,8 +32,8 @@ export const QuestionEdit = () => (
         <SimpleForm>
             <TextInput source="id" InputProps={{disabled: true}}/>
             <ReferenceInput source="userId" reference="users" link="show"/>
-            <TextInput source="questiontext"/>
-            <TextInput source="answertext"/>
+            <TextInput source="questiontext" multiline rows={5} />
+            <TextInput source="answertext" multiline rows={5} />
             <TextInput source="status"/>
             <TextInput source="createddate"/>
             <TextInput source="createdby"/>
@@ -47,8 +47,8 @@ export const QuestionCreate = () => (
     <Create>
         <SimpleForm>
             <ReferenceInput source="userId" reference="users"/>
-            <TextInput source="questiontext"/>
-            <TextInput source="answertext"/>
+            <TextInput source="questiontext" multiline rows={5} />
+            <TextInput source="answertext" multiline rows={5} />
             <TextInput source="status"/>
             <TextInput source="createddate"/>
             <TextInput source="createdby"/>

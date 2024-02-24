@@ -64,7 +64,7 @@ export const dataProvider: DataProvider = {
 
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
-            total: parseInt((headers.get('content-range') || "0").split('/').pop() || '0', 10),
+            total: parseInt((headers.get('content-range') || "0").split('/').pop() || '0', 100),
         }));
     },
 
@@ -106,6 +106,7 @@ export const dataProvider: DataProvider = {
         };
         return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
             method: 'DELETE',
+            headers
         }).then(({ json }) => ({ data: json }));
     }
 };
