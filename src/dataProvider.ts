@@ -9,7 +9,7 @@ const getAccessToken = () => {
     return user ? JSON.parse(user).accessToken : null;
 };
 
-const addBearerToken = (headers) => {
+const addBearerToken = (headers:any) => {
     const accessToken = getAccessToken();
     if (accessToken) {
         headers.set('Authorization', `Bearer ${accessToken}`);

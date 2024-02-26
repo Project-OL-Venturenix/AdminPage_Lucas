@@ -10,12 +10,12 @@ import {
     TextInput, Create
 } from "react-admin";
 
-export const EventGroupList = () => (
+export const GroupUserList = () => (
     <List>
         <Datagrid>
             <TextField source="id"/>
-            <TextField source="eventid"/>
             <TextField source="groupid"/>
+            <TextField source="userid"/>
             <TextField source="status"/>
             <TextField source="createddate"/>
             <TextField source="createdby"/>
@@ -26,12 +26,12 @@ export const EventGroupList = () => (
     </List>
 );
 
-export const EventGroupEdit = () => (
+export const GroupUserEdit = () => (
     <Edit>
         <SimpleForm>
             <TextInput source="id" InputProps={{disabled: true}}/>
-            <TextInput source="eventid"/>
-            <TextInput source="groupid"/>
+            <TextInput source="groupid" required/>
+            <TextInput source="userid" required/>
             <TextInput source="status"/>
             <TextInput source="createddate"/>
             <TextInput source="createdby"/>
@@ -41,11 +41,11 @@ export const EventGroupEdit = () => (
     </Edit>
 );
 
-export const EventGroupCreate = () => (
+export const GroupUserCreate = () => (
     <Create>
         <SimpleForm>
-            <TextInput source="eventid" required/>
             <TextInput source="groupid" required/>
+            <TextInput source="userid" required/>
             <TextInput source="status"/>
             <TextInput source="createddate"/>
             <TextInput source="createdby"/>
