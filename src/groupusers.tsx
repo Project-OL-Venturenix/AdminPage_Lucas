@@ -14,8 +14,8 @@ export const GroupUserList = () => (
     <List>
         <Datagrid>
             <TextField source="id"/>
-            <TextField source="groupid"/>
-            <TextField source="userid"/>
+            <TextField source="groupId"/>
+            <TextField source="userId"/>
             <TextField source="status"/>
             <TextField source="createddate"/>
             <TextField source="createdby"/>
@@ -30,8 +30,8 @@ export const GroupUserEdit = () => (
     <Edit>
         <SimpleForm>
             <TextInput source="id" InputProps={{disabled: true}}/>
-            <TextInput source="groupid" required/>
-            <TextInput source="userid" required/>
+            <TextInput source="groupId" required/>
+            <TextInput source="userId" required/>
             <TextInput source="status"/>
             <TextInput source="createddate"/>
             <TextInput source="createdby"/>
@@ -44,8 +44,8 @@ export const GroupUserEdit = () => (
 export const GroupUserCreate = () => (
     <Create>
         <SimpleForm>
-            <TextInput source="groupid" required/>
-            <TextInput source="userid" required/>
+            <TextInput source="groupId" required/>
+            <TextInput source="userId" required/>
             <TextInput source="status"/>
             <TextInput source="createddate"/>
             <TextInput source="createdby"/>

@@ -14,14 +14,9 @@ export const QuestionList = () => (
     <List>
         <Datagrid>
             <TextField source="id"/>
-            <ReferenceField source="userId" reference="users" link="show"/>
-            <TextField source="questiontext"/>
-            <TextField source="answertext"/>
-            <TextField source="status"/>
-            <TextField source="createddate"/>
-            <TextField source="createdby"/>
-            <TextField source="updateddate"/>
-            <TextField source="updatedby"/>
+            <TextField source="question"/>
+            <TextField source="testComputeCase"/>
+            <TextField source="methodSignatures"/>
             <EditButton/>
         </Datagrid>
     </List>
@@ -31,14 +26,9 @@ export const QuestionEdit = () => (
     <Edit>
         <SimpleForm>
             <TextInput source="id" InputProps={{disabled: true}}/>
-            <ReferenceInput source="userId" reference="users" link="show"/>
-            <TextInput source="questiontext" multiline rows={5} />
-            <TextInput source="answertext" multiline rows={5} />
-            <TextInput source="status"/>
-            <TextInput source="createddate"/>
-            <TextInput source="createdby"/>
-            <TextInput source="updateddate"/>
-            <TextInput source="updatedby"/>
+            <TextInput source="question" multiline rows={5} />
+            <TextInput source="testComputeCase" multiline rows={5} />
+            <TextInput source="methodSignatures" multiline rows={5} />
         </SimpleForm>
     </Edit>
 );
@@ -46,14 +36,9 @@ export const QuestionEdit = () => (
 export const QuestionCreate = () => (
     <Create>
         <SimpleForm>
-            <ReferenceInput source="userId" reference="users"/>
-            <TextInput source="questiontext" multiline rows={5} />
-            <TextInput source="answertext" multiline rows={5} />
-            <TextInput source="status"/>
-            <TextInput source="createddate"/>
-            <TextInput source="createdby"/>
-            <TextInput source="updateddate"/>
-            <TextInput source="updatedby"/>
+            <TextInput source="question" multiline rows={5} />
+            <TextInput source="testComputeCase" multiline rows={5} />
+            <TextInput source="methodSignatures" multiline rows={5} />
         </SimpleForm>
     </Create>
 );
