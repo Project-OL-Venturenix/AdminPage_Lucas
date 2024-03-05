@@ -9,6 +9,7 @@ import {EventQuestionCreate, EventQuestionEdit, EventQuestionList} from "./event
 import {EventUserCreate, EventUserEdit, EventUserList} from "./eventusers";
 import {GroupCreate, GroupEdit, GroupList} from "./groups";
 import {GroupUserCreate, GroupUserEdit, GroupUserList} from "./groupusers";
+import {TestCaseCreate, TestCaseEdit, TestCaseList} from "./testcases";
 
 export const App = () => (
     <Admin dataProvider={dataProvider} authProvider={authProvider}>
@@ -20,5 +21,6 @@ export const App = () => (
         <Resource name="groups" list={GroupList} edit={GroupEdit} create={GroupCreate}/>
         <Resource name="groupusers" list={GroupUserList} edit={GroupUserEdit} create={GroupUserCreate}/>
         <Resource name="eventgroups" list={EventGroupList} edit={EventGroupEdit} create={EventGroupCreate}/>
+            <Resource name="testcases" list={TestCaseList} edit={TestCaseEdit} create={TestCaseCreate}/>
     </Admin>
 );

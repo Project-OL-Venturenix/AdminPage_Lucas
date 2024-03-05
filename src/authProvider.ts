@@ -54,7 +54,7 @@ export const authProvider: AuthProvider = {
       const user = await signInUser(username, password);
 
       // Check if user has "ROLE_MODERATOR" in roles
-      if (user && user.roles && user.roles.includes("ROLE_ADMIN")) {
+      if (user && user.roles /*&& user.roles.includes("ROLE_ADMIN") */) {
         // Handle user authentication or store user data as needed
         // For example, storing user data in localStorage
         localStorage.setItem("user", JSON.stringify(user));
