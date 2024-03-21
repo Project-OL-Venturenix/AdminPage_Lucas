@@ -17,6 +17,7 @@ export const QuestionList = () => (
             <TextField source="question"/>
             <TextField source="testComputeCase"/>
             <TextField source="methodSignatures"/>
+            <TextField source="targetCompleteTime"/>
             <EditButton/>
         </Datagrid>
     </List>
@@ -25,7 +26,7 @@ export const QuestionList = () => (
 export const QuestionEdit = () => (
     <Edit>
         <SimpleForm>
-            <TextInput source="id" InputProps={{disabled: true}}/>
+            <TextInput source="questionId" InputProps={{disabled: true}}/>
             <TextInput source="question" multiline rows={5} />
             <TextInput source="testComputeCase" multiline rows={5} />
             <TextInput source="methodSignatures" multiline rows={5} />

@@ -45,11 +45,11 @@ export const UserList = () => {
             ) : (
                 <Datagrid rowClick="show">
                     <TextField source="id" />
-                    <TextField source="firstname" />
-                    <TextField source="lastname" />
+                    <TextField source="userName" />
+                    <TextField source="firstName" />
+                    <TextField source="lastName" />
                     <EmailField source="mobile" />
                     <TextField source="email" />
-                    <TextField source="username" />
                     <TextField source="company" />
                     <TextField source="title" />
                     <TextField source="status"/>
@@ -68,8 +68,8 @@ export const UserEdit = () => (
             <TextInput source="id" InputProps={{disabled: true}}/>
             <ReferenceInput source="userId" reference="users" link="show"/>
             <TextInput source="id" />
-            <TextInput source="firstname" />
-            <TextInput source="lastname" />
+            <TextInput source="firstName" />
+            <TextInput source="lastName" />
             <TextInput  source="mobile" />
             <TextInput source="email" />
             <TextInput source="username" />

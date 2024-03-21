@@ -14,8 +14,8 @@ import {TestCaseCreate, TestCaseEdit, TestCaseList} from "./testcases";
 export const App = () => (
     <Admin dataProvider={dataProvider} authProvider={authProvider}>
         <Resource name="events" list={EventList} edit={EventEdit} create={EventCreate}/>
-        <Resource name="questions" list={QuestionList} edit={QuestionEdit} create={QuestionCreate}/>
-        <Resource name="eventquestions" list={EventQuestionList} edit={EventQuestionEdit} create={EventQuestionCreate}/>
+        {/*<Resource name="questions" list={QuestionList} edit={QuestionEdit} create={QuestionCreate}/>*/}
+        {/*<Resource name="eventquestions" list={EventQuestionList} edit={EventQuestionEdit} create={EventQuestionCreate}/>*/}
         <Resource name="users" list={UserList} show={ShowGuesser} edit={UserEdit} create={UserCreate}/>
         <Resource name="eventusers" list={EventUserList} edit={EventUserEdit} create={EventUserCreate}/>
         <Resource name="groups" list={GroupList} edit={GroupEdit} create={GroupCreate}/>
